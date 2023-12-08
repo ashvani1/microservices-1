@@ -1,17 +1,12 @@
-package com.elite.project1.springboot1.model;
+package com.elite.project1.springboot1.entitty;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import org.springframework.context.annotation.Bean;
+import jakarta.persistence.Table;
 
-
-//@JsonIgnoreProperties({"department"})
 @Entity
-public class Employee {
-    @Id
-    private String empId;
+public class EmployeeEntity {
+
 
     public String getEmpId() {
         return empId;
@@ -53,12 +48,15 @@ public class Employee {
         this.department = department;
     }
 
+    @Id
+    private String empId;
     private String firstName;
     private String lastName;
     private String emailId;
-
-    //even though we will be getting department in input, we will be ignoring it
-    //@JsonIgnore we can define this at class level as well
     private String department;
+
+
+
+
 
 }
